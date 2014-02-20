@@ -45,7 +45,7 @@ void protobuf_AssignDesc_CharacterDetails_2eproto() {
       "CharacterDetails.proto");
   GOOGLE_CHECK(file != NULL);
   SWGEmuCharacterDetail_descriptor_ = file->message_type(0);
-  static const int SWGEmuCharacterDetail_offsets_[15] = {
+  static const int SWGEmuCharacterDetail_offsets_[16] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuCharacterDetail, object_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuCharacterDetail, account_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuCharacterDetail, first_name_),
@@ -59,6 +59,7 @@ void protobuf_AssignDesc_CharacterDetails_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuCharacterDetail, remaining_plots_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuCharacterDetail, maximumim_plots_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuCharacterDetail, title_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuCharacterDetail, appearance_file_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuCharacterDetail, inventory_items_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuCharacterDetail, structures_),
   };
@@ -170,31 +171,31 @@ void protobuf_AddDesc_CharacterDetails_2eproto() {
   ::swgemurpcserver::rpc::protobuf_AddDesc_InventoryItem_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\026CharacterDetails.proto\022\023swgemurpcserve"
-    "r.rpc\032\023InventoryItem.proto\"\256\003\n\025SWGEmuCha"
+    "r.rpc\032\023InventoryItem.proto\"\307\003\n\025SWGEmuCha"
     "racterDetail\022\021\n\tobject_id\030\001 \002(\006\022\022\n\naccou"
     "nt_id\030\002 \002(\007\022\022\n\nfirst_name\030\003 \002(\t\022\020\n\010sur_n"
     "ame\030\004 \002(\t\022\024\n\014bank_credits\030\005 \001(\007\022\024\n\014cash_"
     "credits\030\006 \001(\007\022\023\n\013base_health\030\007 \001(\007\022\023\n\013ba"
     "se_action\030\010 \001(\007\022\021\n\tbase_mind\030\n \001(\007\022\021\n\tbi"
     "ography\030\013 \001(\t\022\027\n\017remaining_plots\030\014 \001(\005\022\027"
-    "\n\017maximumim_plots\030\r \001(\005\022\r\n\005title\030\016 \001(\t\022D"
-    "\n\017inventory_items\030\024 \003(\0132+.swgemurpcserve"
-    "r.rpc.CharacterInventoryItem\022E\n\nstructur"
-    "es\030\025 \003(\01321.swgemurpcserver.rpc.SWGEmuCha"
-    "racterStructureItem\"\\\n\034SWGEmuCharacterSt"
-    "ructureItem\022\021\n\tobject_id\030\001 \002(\006\022\023\n\013object"
-    "_name\030\002 \002(\t\022\024\n\014display_name\030\003 \002(\t\"\221\001\n\032Ge"
-    "tCharacterDetailsRequest\022\022\n\naccount_id\030\001"
-    " \002(\007\022\021\n\tobject_id\030\002 \001(\006\022\021\n\tgalaxy_id\030\003 \001"
-    "(\007\022\022\n\nfirst_name\030\007 \001(\t\022\020\n\010sur_name\030\010 \001(\t"
-    "\022\023\n\013galaxy_name\030\t \001(\t\"d\n\033GetCharacterDet"
-    "ailsResponse\022E\n\021character_details\030\001 \003(\0132"
-    "*.swgemurpcserver.rpc.SWGEmuCharacterDet"
-    "ail2\231\001\n\035SWGEmuCharacterDetailsService\022x\n"
-    "\023GetCharacterDetails\022/.swgemurpcserver.r"
-    "pc.GetCharacterDetailsRequest\0320.swgemurp"
-    "cserver.rpc.GetCharacterDetailsResponseB"
-    "\003\200\001\001", 1004);
+    "\n\017maximumim_plots\030\r \001(\005\022\r\n\005title\030\016 \001(\t\022\027"
+    "\n\017appearance_file\030\017 \001(\t\022D\n\017inventory_ite"
+    "ms\030\024 \003(\0132+.swgemurpcserver.rpc.Character"
+    "InventoryItem\022E\n\nstructures\030\025 \003(\01321.swge"
+    "murpcserver.rpc.SWGEmuCharacterStructure"
+    "Item\"\\\n\034SWGEmuCharacterStructureItem\022\021\n\t"
+    "object_id\030\001 \002(\006\022\023\n\013object_name\030\002 \002(\t\022\024\n\014"
+    "display_name\030\003 \002(\t\"\221\001\n\032GetCharacterDetai"
+    "lsRequest\022\022\n\naccount_id\030\001 \002(\007\022\021\n\tobject_"
+    "id\030\002 \001(\006\022\021\n\tgalaxy_id\030\003 \001(\007\022\022\n\nfirst_nam"
+    "e\030\007 \001(\t\022\020\n\010sur_name\030\010 \001(\t\022\023\n\013galaxy_name"
+    "\030\t \001(\t\"d\n\033GetCharacterDetailsResponse\022E\n"
+    "\021character_details\030\001 \003(\0132*.swgemurpcserv"
+    "er.rpc.SWGEmuCharacterDetail2\231\001\n\035SWGEmuC"
+    "haracterDetailsService\022x\n\023GetCharacterDe"
+    "tails\022/.swgemurpcserver.rpc.GetCharacter"
+    "DetailsRequest\0320.swgemurpcserver.rpc.Get"
+    "CharacterDetailsResponseB\003\200\001\001", 1029);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "CharacterDetails.proto", &protobuf_RegisterTypes);
   SWGEmuCharacterDetail::default_instance_ = new SWGEmuCharacterDetail();
@@ -231,6 +232,7 @@ const int SWGEmuCharacterDetail::kBiographyFieldNumber;
 const int SWGEmuCharacterDetail::kRemainingPlotsFieldNumber;
 const int SWGEmuCharacterDetail::kMaximumimPlotsFieldNumber;
 const int SWGEmuCharacterDetail::kTitleFieldNumber;
+const int SWGEmuCharacterDetail::kAppearanceFileFieldNumber;
 const int SWGEmuCharacterDetail::kInventoryItemsFieldNumber;
 const int SWGEmuCharacterDetail::kStructuresFieldNumber;
 #endif  // !_MSC_VER
@@ -264,6 +266,7 @@ void SWGEmuCharacterDetail::SharedCtor() {
   remaining_plots_ = 0;
   maximumim_plots_ = 0;
   title_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  appearance_file_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -283,6 +286,9 @@ void SWGEmuCharacterDetail::SharedDtor() {
   }
   if (title_ != &::google::protobuf::internal::kEmptyString) {
     delete title_;
+  }
+  if (appearance_file_ != &::google::protobuf::internal::kEmptyString) {
+    delete appearance_file_;
   }
   if (this != default_instance_) {
   }
@@ -340,6 +346,11 @@ void SWGEmuCharacterDetail::Clear() {
     if (has_title()) {
       if (title_ != &::google::protobuf::internal::kEmptyString) {
         title_->clear();
+      }
+    }
+    if (has_appearance_file()) {
+      if (appearance_file_ != &::google::protobuf::internal::kEmptyString) {
+        appearance_file_->clear();
       }
     }
   }
@@ -562,6 +573,23 @@ bool SWGEmuCharacterDetail::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
+        if (input->ExpectTag(122)) goto parse_appearance_file;
+        break;
+      }
+
+      // optional string appearance_file = 15;
+      case 15: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_appearance_file:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_appearance_file()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+            this->appearance_file().data(), this->appearance_file().length(),
+            ::google::protobuf::internal::WireFormat::PARSE);
+        } else {
+          goto handle_uninterpreted;
+        }
         if (input->ExpectTag(162)) goto parse_inventory_items;
         break;
       }
@@ -695,6 +723,15 @@ void SWGEmuCharacterDetail::SerializeWithCachedSizes(
       14, this->title(), output);
   }
 
+  // optional string appearance_file = 15;
+  if (has_appearance_file()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+      this->appearance_file().data(), this->appearance_file().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE);
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      15, this->appearance_file(), output);
+  }
+
   // repeated .swgemurpcserver.rpc.CharacterInventoryItem inventory_items = 20;
   for (int i = 0; i < this->inventory_items_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -798,6 +835,16 @@ void SWGEmuCharacterDetail::SerializeWithCachedSizes(
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         14, this->title(), target);
+  }
+
+  // optional string appearance_file = 15;
+  if (has_appearance_file()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+      this->appearance_file().data(), this->appearance_file().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE);
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        15, this->appearance_file(), target);
   }
 
   // repeated .swgemurpcserver.rpc.CharacterInventoryItem inventory_items = 20;
@@ -904,6 +951,13 @@ int SWGEmuCharacterDetail::ByteSize() const {
           this->title());
     }
 
+    // optional string appearance_file = 15;
+    if (has_appearance_file()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->appearance_file());
+    }
+
   }
   // repeated .swgemurpcserver.rpc.CharacterInventoryItem inventory_items = 20;
   total_size += 2 * this->inventory_items_size();
@@ -990,6 +1044,9 @@ void SWGEmuCharacterDetail::MergeFrom(const SWGEmuCharacterDetail& from) {
     if (from.has_title()) {
       set_title(from.title());
     }
+    if (from.has_appearance_file()) {
+      set_appearance_file(from.appearance_file());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -1033,6 +1090,7 @@ void SWGEmuCharacterDetail::Swap(SWGEmuCharacterDetail* other) {
     std::swap(remaining_plots_, other->remaining_plots_);
     std::swap(maximumim_plots_, other->maximumim_plots_);
     std::swap(title_, other->title_);
+    std::swap(appearance_file_, other->appearance_file_);
     inventory_items_.Swap(&other->inventory_items_);
     structures_.Swap(&other->structures_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);

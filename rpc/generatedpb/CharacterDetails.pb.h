@@ -208,6 +208,18 @@ class SWGEmuCharacterDetail : public ::google::protobuf::Message {
   inline ::std::string* release_title();
   inline void set_allocated_title(::std::string* title);
 
+  // optional string appearance_file = 15;
+  inline bool has_appearance_file() const;
+  inline void clear_appearance_file();
+  static const int kAppearanceFileFieldNumber = 15;
+  inline const ::std::string& appearance_file() const;
+  inline void set_appearance_file(const ::std::string& value);
+  inline void set_appearance_file(const char* value);
+  inline void set_appearance_file(const char* value, size_t size);
+  inline ::std::string* mutable_appearance_file();
+  inline ::std::string* release_appearance_file();
+  inline void set_allocated_appearance_file(::std::string* appearance_file);
+
   // repeated .swgemurpcserver.rpc.CharacterInventoryItem inventory_items = 20;
   inline int inventory_items_size() const;
   inline void clear_inventory_items();
@@ -260,6 +272,8 @@ class SWGEmuCharacterDetail : public ::google::protobuf::Message {
   inline void clear_has_maximumim_plots();
   inline void set_has_title();
   inline void clear_has_title();
+  inline void set_has_appearance_file();
+  inline void clear_has_appearance_file();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -276,11 +290,12 @@ class SWGEmuCharacterDetail : public ::google::protobuf::Message {
   ::google::protobuf::int32 remaining_plots_;
   ::google::protobuf::int32 maximumim_plots_;
   ::std::string* title_;
+  ::std::string* appearance_file_;
   ::google::protobuf::RepeatedPtrField< ::swgemurpcserver::rpc::CharacterInventoryItem > inventory_items_;
   ::google::protobuf::RepeatedPtrField< ::swgemurpcserver::rpc::SWGEmuCharacterStructureItem > structures_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(15 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(16 + 31) / 32];
 
   friend void  protobuf_AddDesc_CharacterDetails_2eproto();
   friend void protobuf_AssignDesc_CharacterDetails_2eproto();
@@ -1174,6 +1189,76 @@ inline void SWGEmuCharacterDetail::set_allocated_title(::std::string* title) {
   } else {
     clear_has_title();
     title_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// optional string appearance_file = 15;
+inline bool SWGEmuCharacterDetail::has_appearance_file() const {
+  return (_has_bits_[0] & 0x00002000u) != 0;
+}
+inline void SWGEmuCharacterDetail::set_has_appearance_file() {
+  _has_bits_[0] |= 0x00002000u;
+}
+inline void SWGEmuCharacterDetail::clear_has_appearance_file() {
+  _has_bits_[0] &= ~0x00002000u;
+}
+inline void SWGEmuCharacterDetail::clear_appearance_file() {
+  if (appearance_file_ != &::google::protobuf::internal::kEmptyString) {
+    appearance_file_->clear();
+  }
+  clear_has_appearance_file();
+}
+inline const ::std::string& SWGEmuCharacterDetail::appearance_file() const {
+  return *appearance_file_;
+}
+inline void SWGEmuCharacterDetail::set_appearance_file(const ::std::string& value) {
+  set_has_appearance_file();
+  if (appearance_file_ == &::google::protobuf::internal::kEmptyString) {
+    appearance_file_ = new ::std::string;
+  }
+  appearance_file_->assign(value);
+}
+inline void SWGEmuCharacterDetail::set_appearance_file(const char* value) {
+  set_has_appearance_file();
+  if (appearance_file_ == &::google::protobuf::internal::kEmptyString) {
+    appearance_file_ = new ::std::string;
+  }
+  appearance_file_->assign(value);
+}
+inline void SWGEmuCharacterDetail::set_appearance_file(const char* value, size_t size) {
+  set_has_appearance_file();
+  if (appearance_file_ == &::google::protobuf::internal::kEmptyString) {
+    appearance_file_ = new ::std::string;
+  }
+  appearance_file_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* SWGEmuCharacterDetail::mutable_appearance_file() {
+  set_has_appearance_file();
+  if (appearance_file_ == &::google::protobuf::internal::kEmptyString) {
+    appearance_file_ = new ::std::string;
+  }
+  return appearance_file_;
+}
+inline ::std::string* SWGEmuCharacterDetail::release_appearance_file() {
+  clear_has_appearance_file();
+  if (appearance_file_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = appearance_file_;
+    appearance_file_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void SWGEmuCharacterDetail::set_allocated_appearance_file(::std::string* appearance_file) {
+  if (appearance_file_ != &::google::protobuf::internal::kEmptyString) {
+    delete appearance_file_;
+  }
+  if (appearance_file) {
+    set_has_appearance_file();
+    appearance_file_ = appearance_file;
+  } else {
+    clear_has_appearance_file();
+    appearance_file_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   }
 }
 

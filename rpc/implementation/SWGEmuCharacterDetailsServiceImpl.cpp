@@ -19,6 +19,7 @@
 #include "../../../MMOCoreORB/src/autogen/server/zone/objects/player/PlayerObject.h"
 #include "../../../MMOCoreORB/src/autogen/server/zone/objects/creature/CreatureObject.h"
 #include "../../../MMOCoreORB/src/server/zone/objects/scene/variables/StringId.h"
+#include "../../../MMOCoreORB/src/server/zone/templates/SharedObjectTemplate.h"
 #include "../../../MMOEngine/include/engine/log/Logger.h"
 #include "rpc/util/ItemMessageHelper.h"
 
@@ -62,6 +63,10 @@ void SWGEmuCharacterDetailsServiceImpl::GetCharacterDetails(
 		Reference<PlayerObject *> playerObj = creatureObj->getPlayerObject();
 		logger->info("getting player object", true);
 		if(playerObj != NULL) {
+
+			SharedObjectTemplate* sharedObjTemplate = creatureObj->getObjectTemplate();
+
+			detail->set_appearance_file(sharedObjTemplate->getAppearanceFilename().toCharArray());
 
 			detail->set_account_id(playerObj->getAccountID());
 			detail->set_first_name(creatureObj->getFirstName().toCharArray());
