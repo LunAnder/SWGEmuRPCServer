@@ -71,7 +71,7 @@ void SWGEmuAccountServiceImpl::GetAccount(
 				ResultSet* result = ServerDatabase::instance()->executeQuery(query.str().c_str());
 
 				uint accountID = -1;
-				if(result == NULL || result->size() <= 0 || !result->next()) {
+				if(result == NULL || result->size() == 0 || !result->next()) {
 					logger->info("result from db is null or empty", true);
 
 				}
@@ -97,6 +97,7 @@ void SWGEmuAccountServiceImpl::GetAccount(
 					if(pwHash != hashedProvidedPW) {
 						logger->info("invalid password",true);
 						done->Run();
+						return;
 					}
 					else {
 						credentailsMatch = true;
