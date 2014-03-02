@@ -53,6 +53,7 @@ void StructureMessageHelper::AddStructureDetailsToMessage(server::zone::objects:
 	structDetails->set_object_id(structreObj->getObjectID());
 	structDetails->set_object_name(structreObj->getObjectName()->getFullPath().toCharArray());
 	structDetails->set_owner_display_name(structreObj->getOwnerCreatureObject()->getDisplayedName().toCharArray());
+	structDetails->set_owner_object_id(structreObj->getOwnerCreatureObject()->getObjectID());
 	structDetails->set_world_x(structreObj->getWorldPositionX());
 	structDetails->set_world_y(structreObj->getWorldPositionY());
 	structDetails->set_world_z(structreObj->getWorldPositionZ());
@@ -61,6 +62,12 @@ void StructureMessageHelper::AddStructureDetailsToMessage(server::zone::objects:
 	structDetails->set_maintenance(structreObj->getSurplusMaintenance());
 	structDetails->set_decay_percent(structreObj->getDecayPercentage());
 	structDetails->set_lot_size(structreObj->getLotSize());
+
+	PlayerObject* onwerPlayer = dynamic_cast<PlayerObject*>(structreObj->getOwnerCreatureObject());
+
+	if(onwerPlayer != NULL) {
+		structDetails->set_owner_account_id(onwerPlayer->getAccountID());
+	}
 
 	SharedStructureObjectTemplate* structTempalte = dynamic_cast<SharedStructureObjectTemplate*>(structreObj->getObjectTemplate());
 

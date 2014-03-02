@@ -54,12 +54,14 @@ void protobuf_AssignDesc_StructureDetails_2eproto() {
       "StructureDetails.proto");
   GOOGLE_CHECK(file != NULL);
   SWGEmuStructureItemDetails_descriptor_ = file->message_type(0);
-  static const int SWGEmuStructureItemDetails_offsets_[18] = {
+  static const int SWGEmuStructureItemDetails_offsets_[20] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuStructureItemDetails, object_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuStructureItemDetails, appearance_file_name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuStructureItemDetails, object_name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuStructureItemDetails, display_name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuStructureItemDetails, owner_display_name_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuStructureItemDetails, owner_object_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuStructureItemDetails, owner_account_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuStructureItemDetails, world_x_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuStructureItemDetails, world_y_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuStructureItemDetails, world_z_),
@@ -239,44 +241,45 @@ void protobuf_AddDesc_StructureDetails_2eproto() {
   ::swgemurpcserver::rpc::protobuf_AddDesc_InventoryItem_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\026StructureDetails.proto\022\023swgemurpcserve"
-    "r.rpc\032\023InventoryItem.proto\"\202\004\n\032SWGEmuStr"
+    "r.rpc\032\023InventoryItem.proto\"\265\004\n\032SWGEmuStr"
     "uctureItemDetails\022\021\n\tobject_id\030\001 \002(\006\022\034\n\024"
     "appearance_file_name\030\002 \002(\t\022\023\n\013object_nam"
     "e\030\003 \002(\t\022\024\n\014display_name\030\004 \002(\t\022\032\n\022owner_d"
-    "isplay_name\030\005 \002(\t\022\017\n\007world_x\030\006 \001(\002\022\017\n\007wo"
-    "rld_y\030\007 \001(\002\022\017\n\007world_z\030\010 \001(\002\022\014\n\004zone\030\t \001"
-    "(\t\022\r\n\005power\030\n \001(\005\022\023\n\013maintenance\030\013 \001(\005\022\025"
-    "\n\rdecay_percent\030\014 \001(\005\022\020\n\010lot_size\030\r \001(\005\022"
-    "\032\n\022template_file_name\030\016 \001(\t\022\031\n\021portals_f"
-    "ile_name\030\017 \001(\t\022\027\n\017buildable_zones\030\020 \003(\t\022"
-    "B\n\020building_details\030\024 \001(\0132(.swgemurpcser"
-    "ver.rpc.BuildingItemDetails\022J\n\024installat"
-    "ion_details\030\025 \001(\0132,.swgemurpcserver.rpc."
-    "InstallationItemDetails\"[\n\023BuildingItemD"
-    "etails\022D\n\017contained_items\030\001 \003(\0132+.swgemu"
-    "rpcserver.rpc.CharacterInventoryItem\"\245\002\n"
-    "\027InstallationItemDetails\022\021\n\toperating\030\001 "
-    "\002(\010\022\023\n\013actual_rate\030\002 \002(\002\022\027\n\017max_hopper_s"
-    "ize\030\003 \002(\002\022D\n\021harvester_details\030\004 \001(\0132).s"
-    "wgemurpcserver.rpc.HarvesterItemDetails\022"
-    "@\n\017factory_details\030\005 \001(\0132\'.swgemurpcserv"
-    "er.rpc.FactoryItemDetails\022A\n\014hopper_item"
-    "s\030\n \003(\0132+.swgemurpcserver.rpc.CharacterI"
-    "nventoryItem\"/\n\024HarvesterItemDetails\022\027\n\017"
-    "extraction_rate\030\001 \002(\002\"\233\001\n\022FactoryItemDet"
-    "ails\022>\n\tschematic\030\001 \001(\0132+.swgemurpcserve"
-    "r.rpc.CharacterInventoryItem\022E\n\020ingredie"
-    "nt_items\030\n \003(\0132+.swgemurpcserver.rpc.Cha"
-    "racterInventoryItem\"L\n\036GetStructureItemD"
-    "etailsRequest\022\021\n\tobject_id\030\001 \002(\006\022\027\n\017owne"
-    "r_object_id\030\002 \001(\006\"f\n\037GetStructureItemDet"
-    "ailsResponse\022C\n\nstructures\030\001 \003(\0132/.swgem"
-    "urpcserver.rpc.SWGEmuStructureItemDetail"
-    "s2\252\001\n!SWGEmuStructureItemDetailsService\022"
-    "\204\001\n\027GetStructureItemDetails\0223.swgemurpcs"
-    "erver.rpc.GetStructureItemDetailsRequest"
-    "\0324.swgemurpcserver.rpc.GetStructureItemD"
-    "etailsResponseB\003\200\001\001", 1539);
+    "isplay_name\030\005 \002(\t\022\027\n\017owner_object_id\030\006 \002"
+    "(\006\022\030\n\020owner_account_id\030\007 \001(\007\022\017\n\007world_x\030"
+    "\010 \001(\002\022\017\n\007world_y\030\t \001(\002\022\017\n\007world_z\030\n \001(\002\022"
+    "\014\n\004zone\030\013 \001(\t\022\r\n\005power\030\014 \001(\005\022\023\n\013maintena"
+    "nce\030\r \001(\005\022\025\n\rdecay_percent\030\016 \001(\005\022\020\n\010lot_"
+    "size\030\017 \001(\005\022\032\n\022template_file_name\030\020 \001(\t\022\031"
+    "\n\021portals_file_name\030\021 \001(\t\022\027\n\017buildable_z"
+    "ones\030\022 \003(\t\022B\n\020building_details\030\024 \001(\0132(.s"
+    "wgemurpcserver.rpc.BuildingItemDetails\022J"
+    "\n\024installation_details\030\025 \001(\0132,.swgemurpc"
+    "server.rpc.InstallationItemDetails\"[\n\023Bu"
+    "ildingItemDetails\022D\n\017contained_items\030\001 \003"
+    "(\0132+.swgemurpcserver.rpc.CharacterInvent"
+    "oryItem\"\245\002\n\027InstallationItemDetails\022\021\n\to"
+    "perating\030\001 \002(\010\022\023\n\013actual_rate\030\002 \002(\002\022\027\n\017m"
+    "ax_hopper_size\030\003 \002(\002\022D\n\021harvester_detail"
+    "s\030\004 \001(\0132).swgemurpcserver.rpc.HarvesterI"
+    "temDetails\022@\n\017factory_details\030\005 \001(\0132\'.sw"
+    "gemurpcserver.rpc.FactoryItemDetails\022A\n\014"
+    "hopper_items\030\n \003(\0132+.swgemurpcserver.rpc"
+    ".CharacterInventoryItem\"/\n\024HarvesterItem"
+    "Details\022\027\n\017extraction_rate\030\001 \002(\002\"\233\001\n\022Fac"
+    "toryItemDetails\022>\n\tschematic\030\001 \001(\0132+.swg"
+    "emurpcserver.rpc.CharacterInventoryItem\022"
+    "E\n\020ingredient_items\030\n \003(\0132+.swgemurpcser"
+    "ver.rpc.CharacterInventoryItem\"L\n\036GetStr"
+    "uctureItemDetailsRequest\022\021\n\tobject_id\030\001 "
+    "\002(\006\022\027\n\017owner_object_id\030\002 \001(\006\"f\n\037GetStruc"
+    "tureItemDetailsResponse\022C\n\nstructures\030\001 "
+    "\003(\0132/.swgemurpcserver.rpc.SWGEmuStructur"
+    "eItemDetails2\252\001\n!SWGEmuStructureItemDeta"
+    "ilsService\022\204\001\n\027GetStructureItemDetails\0223"
+    ".swgemurpcserver.rpc.GetStructureItemDet"
+    "ailsRequest\0324.swgemurpcserver.rpc.GetStr"
+    "uctureItemDetailsResponseB\003\200\001\001", 1590);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "StructureDetails.proto", &protobuf_RegisterTypes);
   SWGEmuStructureItemDetails::default_instance_ = new SWGEmuStructureItemDetails();
@@ -311,6 +314,8 @@ const int SWGEmuStructureItemDetails::kAppearanceFileNameFieldNumber;
 const int SWGEmuStructureItemDetails::kObjectNameFieldNumber;
 const int SWGEmuStructureItemDetails::kDisplayNameFieldNumber;
 const int SWGEmuStructureItemDetails::kOwnerDisplayNameFieldNumber;
+const int SWGEmuStructureItemDetails::kOwnerObjectIdFieldNumber;
+const int SWGEmuStructureItemDetails::kOwnerAccountIdFieldNumber;
 const int SWGEmuStructureItemDetails::kWorldXFieldNumber;
 const int SWGEmuStructureItemDetails::kWorldYFieldNumber;
 const int SWGEmuStructureItemDetails::kWorldZFieldNumber;
@@ -349,6 +354,8 @@ void SWGEmuStructureItemDetails::SharedCtor() {
   object_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   display_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   owner_display_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  owner_object_id_ = GOOGLE_ULONGLONG(0);
+  owner_account_id_ = 0u;
   world_x_ = 0;
   world_y_ = 0;
   world_z_ = 0;
@@ -440,11 +447,13 @@ void SWGEmuStructureItemDetails::Clear() {
         owner_display_name_->clear();
       }
     }
+    owner_object_id_ = GOOGLE_ULONGLONG(0);
+    owner_account_id_ = 0u;
     world_x_ = 0;
-    world_y_ = 0;
-    world_z_ = 0;
   }
   if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    world_y_ = 0;
+    world_z_ = 0;
     if (has_zone()) {
       if (zone_ != &::google::protobuf::internal::kEmptyString) {
         zone_->clear();
@@ -459,13 +468,13 @@ void SWGEmuStructureItemDetails::Clear() {
         template_file_name_->clear();
       }
     }
+  }
+  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
     if (has_portals_file_name()) {
       if (portals_file_name_ != &::google::protobuf::internal::kEmptyString) {
         portals_file_name_->clear();
       }
     }
-  }
-  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
     if (has_building_details()) {
       if (building_details_ != NULL) building_details_->::swgemurpcserver::rpc::BuildingItemDetails::Clear();
     }
@@ -563,12 +572,44 @@ bool SWGEmuStructureItemDetails::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(53)) goto parse_world_x;
+        if (input->ExpectTag(49)) goto parse_owner_object_id;
         break;
       }
 
-      // optional float world_x = 6;
+      // required fixed64 owner_object_id = 6;
       case 6: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED64) {
+         parse_owner_object_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED64>(
+                 input, &owner_object_id_)));
+          set_has_owner_object_id();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(61)) goto parse_owner_account_id;
+        break;
+      }
+
+      // optional fixed32 owner_account_id = 7;
+      case 7: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
+         parse_owner_account_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
+                 input, &owner_account_id_)));
+          set_has_owner_account_id();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(69)) goto parse_world_x;
+        break;
+      }
+
+      // optional float world_x = 8;
+      case 8: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
          parse_world_x:
@@ -579,12 +620,12 @@ bool SWGEmuStructureItemDetails::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(61)) goto parse_world_y;
+        if (input->ExpectTag(77)) goto parse_world_y;
         break;
       }
 
-      // optional float world_y = 7;
-      case 7: {
+      // optional float world_y = 9;
+      case 9: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
          parse_world_y:
@@ -595,12 +636,12 @@ bool SWGEmuStructureItemDetails::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(69)) goto parse_world_z;
+        if (input->ExpectTag(85)) goto parse_world_z;
         break;
       }
 
-      // optional float world_z = 8;
-      case 8: {
+      // optional float world_z = 10;
+      case 10: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
          parse_world_z:
@@ -611,12 +652,12 @@ bool SWGEmuStructureItemDetails::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(74)) goto parse_zone;
+        if (input->ExpectTag(90)) goto parse_zone;
         break;
       }
 
-      // optional string zone = 9;
-      case 9: {
+      // optional string zone = 11;
+      case 11: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
          parse_zone:
@@ -628,12 +669,12 @@ bool SWGEmuStructureItemDetails::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(80)) goto parse_power;
+        if (input->ExpectTag(96)) goto parse_power;
         break;
       }
 
-      // optional int32 power = 10;
-      case 10: {
+      // optional int32 power = 12;
+      case 12: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_power:
@@ -644,12 +685,12 @@ bool SWGEmuStructureItemDetails::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(88)) goto parse_maintenance;
+        if (input->ExpectTag(104)) goto parse_maintenance;
         break;
       }
 
-      // optional int32 maintenance = 11;
-      case 11: {
+      // optional int32 maintenance = 13;
+      case 13: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_maintenance:
@@ -660,12 +701,12 @@ bool SWGEmuStructureItemDetails::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(96)) goto parse_decay_percent;
+        if (input->ExpectTag(112)) goto parse_decay_percent;
         break;
       }
 
-      // optional int32 decay_percent = 12;
-      case 12: {
+      // optional int32 decay_percent = 14;
+      case 14: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_decay_percent:
@@ -676,12 +717,12 @@ bool SWGEmuStructureItemDetails::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(104)) goto parse_lot_size;
+        if (input->ExpectTag(120)) goto parse_lot_size;
         break;
       }
 
-      // optional int32 lot_size = 13;
-      case 13: {
+      // optional int32 lot_size = 15;
+      case 15: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_lot_size:
@@ -692,12 +733,12 @@ bool SWGEmuStructureItemDetails::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(114)) goto parse_template_file_name;
+        if (input->ExpectTag(130)) goto parse_template_file_name;
         break;
       }
 
-      // optional string template_file_name = 14;
-      case 14: {
+      // optional string template_file_name = 16;
+      case 16: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
          parse_template_file_name:
@@ -709,12 +750,12 @@ bool SWGEmuStructureItemDetails::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(122)) goto parse_portals_file_name;
+        if (input->ExpectTag(138)) goto parse_portals_file_name;
         break;
       }
 
-      // optional string portals_file_name = 15;
-      case 15: {
+      // optional string portals_file_name = 17;
+      case 17: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
          parse_portals_file_name:
@@ -726,12 +767,12 @@ bool SWGEmuStructureItemDetails::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(130)) goto parse_buildable_zones;
+        if (input->ExpectTag(146)) goto parse_buildable_zones;
         break;
       }
 
-      // repeated string buildable_zones = 16;
-      case 16: {
+      // repeated string buildable_zones = 18;
+      case 18: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
          parse_buildable_zones:
@@ -744,7 +785,7 @@ bool SWGEmuStructureItemDetails::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(130)) goto parse_buildable_zones;
+        if (input->ExpectTag(146)) goto parse_buildable_zones;
         if (input->ExpectTag(162)) goto parse_building_details;
         break;
       }
@@ -836,75 +877,85 @@ void SWGEmuStructureItemDetails::SerializeWithCachedSizes(
       5, this->owner_display_name(), output);
   }
 
-  // optional float world_x = 6;
+  // required fixed64 owner_object_id = 6;
+  if (has_owner_object_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFixed64(6, this->owner_object_id(), output);
+  }
+
+  // optional fixed32 owner_account_id = 7;
+  if (has_owner_account_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFixed32(7, this->owner_account_id(), output);
+  }
+
+  // optional float world_x = 8;
   if (has_world_x()) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->world_x(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->world_x(), output);
   }
 
-  // optional float world_y = 7;
+  // optional float world_y = 9;
   if (has_world_y()) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->world_y(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(9, this->world_y(), output);
   }
 
-  // optional float world_z = 8;
+  // optional float world_z = 10;
   if (has_world_z()) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->world_z(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(10, this->world_z(), output);
   }
 
-  // optional string zone = 9;
+  // optional string zone = 11;
   if (has_zone()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->zone().data(), this->zone().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      9, this->zone(), output);
+      11, this->zone(), output);
   }
 
-  // optional int32 power = 10;
+  // optional int32 power = 12;
   if (has_power()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(10, this->power(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(12, this->power(), output);
   }
 
-  // optional int32 maintenance = 11;
+  // optional int32 maintenance = 13;
   if (has_maintenance()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(11, this->maintenance(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(13, this->maintenance(), output);
   }
 
-  // optional int32 decay_percent = 12;
+  // optional int32 decay_percent = 14;
   if (has_decay_percent()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(12, this->decay_percent(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(14, this->decay_percent(), output);
   }
 
-  // optional int32 lot_size = 13;
+  // optional int32 lot_size = 15;
   if (has_lot_size()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(13, this->lot_size(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(15, this->lot_size(), output);
   }
 
-  // optional string template_file_name = 14;
+  // optional string template_file_name = 16;
   if (has_template_file_name()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->template_file_name().data(), this->template_file_name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      14, this->template_file_name(), output);
+      16, this->template_file_name(), output);
   }
 
-  // optional string portals_file_name = 15;
+  // optional string portals_file_name = 17;
   if (has_portals_file_name()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->portals_file_name().data(), this->portals_file_name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      15, this->portals_file_name(), output);
+      17, this->portals_file_name(), output);
   }
 
-  // repeated string buildable_zones = 16;
+  // repeated string buildable_zones = 18;
   for (int i = 0; i < this->buildable_zones_size(); i++) {
   ::google::protobuf::internal::WireFormat::VerifyUTF8String(
     this->buildable_zones(i).data(), this->buildable_zones(i).length(),
     ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      16, this->buildable_zones(i), output);
+      18, this->buildable_zones(i), output);
   }
 
   // optional .swgemurpcserver.rpc.BuildingItemDetails building_details = 20;
@@ -972,78 +1023,88 @@ void SWGEmuStructureItemDetails::SerializeWithCachedSizes(
         5, this->owner_display_name(), target);
   }
 
-  // optional float world_x = 6;
+  // required fixed64 owner_object_id = 6;
+  if (has_owner_object_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFixed64ToArray(6, this->owner_object_id(), target);
+  }
+
+  // optional fixed32 owner_account_id = 7;
+  if (has_owner_account_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFixed32ToArray(7, this->owner_account_id(), target);
+  }
+
+  // optional float world_x = 8;
   if (has_world_x()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->world_x(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->world_x(), target);
   }
 
-  // optional float world_y = 7;
+  // optional float world_y = 9;
   if (has_world_y()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->world_y(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(9, this->world_y(), target);
   }
 
-  // optional float world_z = 8;
+  // optional float world_z = 10;
   if (has_world_z()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->world_z(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(10, this->world_z(), target);
   }
 
-  // optional string zone = 9;
+  // optional string zone = 11;
   if (has_zone()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->zone().data(), this->zone().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        9, this->zone(), target);
+        11, this->zone(), target);
   }
 
-  // optional int32 power = 10;
+  // optional int32 power = 12;
   if (has_power()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(10, this->power(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(12, this->power(), target);
   }
 
-  // optional int32 maintenance = 11;
+  // optional int32 maintenance = 13;
   if (has_maintenance()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(11, this->maintenance(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(13, this->maintenance(), target);
   }
 
-  // optional int32 decay_percent = 12;
+  // optional int32 decay_percent = 14;
   if (has_decay_percent()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(12, this->decay_percent(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(14, this->decay_percent(), target);
   }
 
-  // optional int32 lot_size = 13;
+  // optional int32 lot_size = 15;
   if (has_lot_size()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(13, this->lot_size(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(15, this->lot_size(), target);
   }
 
-  // optional string template_file_name = 14;
+  // optional string template_file_name = 16;
   if (has_template_file_name()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->template_file_name().data(), this->template_file_name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        14, this->template_file_name(), target);
+        16, this->template_file_name(), target);
   }
 
-  // optional string portals_file_name = 15;
+  // optional string portals_file_name = 17;
   if (has_portals_file_name()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->portals_file_name().data(), this->portals_file_name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        15, this->portals_file_name(), target);
+        17, this->portals_file_name(), target);
   }
 
-  // repeated string buildable_zones = 16;
+  // repeated string buildable_zones = 18;
   for (int i = 0; i < this->buildable_zones_size(); i++) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->buildable_zones(i).data(), this->buildable_zones(i).length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(16, this->buildable_zones(i), target);
+      WriteStringToArray(18, this->buildable_zones(i), target);
   }
 
   // optional .swgemurpcserver.rpc.BuildingItemDetails building_details = 20;
@@ -1104,74 +1165,84 @@ int SWGEmuStructureItemDetails::ByteSize() const {
           this->owner_display_name());
     }
 
-    // optional float world_x = 6;
+    // required fixed64 owner_object_id = 6;
+    if (has_owner_object_id()) {
+      total_size += 1 + 8;
+    }
+
+    // optional fixed32 owner_account_id = 7;
+    if (has_owner_account_id()) {
+      total_size += 1 + 4;
+    }
+
+    // optional float world_x = 8;
     if (has_world_x()) {
-      total_size += 1 + 4;
-    }
-
-    // optional float world_y = 7;
-    if (has_world_y()) {
-      total_size += 1 + 4;
-    }
-
-    // optional float world_z = 8;
-    if (has_world_z()) {
       total_size += 1 + 4;
     }
 
   }
   if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
-    // optional string zone = 9;
+    // optional float world_y = 9;
+    if (has_world_y()) {
+      total_size += 1 + 4;
+    }
+
+    // optional float world_z = 10;
+    if (has_world_z()) {
+      total_size += 1 + 4;
+    }
+
+    // optional string zone = 11;
     if (has_zone()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->zone());
     }
 
-    // optional int32 power = 10;
+    // optional int32 power = 12;
     if (has_power()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->power());
     }
 
-    // optional int32 maintenance = 11;
+    // optional int32 maintenance = 13;
     if (has_maintenance()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->maintenance());
     }
 
-    // optional int32 decay_percent = 12;
+    // optional int32 decay_percent = 14;
     if (has_decay_percent()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->decay_percent());
     }
 
-    // optional int32 lot_size = 13;
+    // optional int32 lot_size = 15;
     if (has_lot_size()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->lot_size());
     }
 
-    // optional string template_file_name = 14;
+    // optional string template_file_name = 16;
     if (has_template_file_name()) {
-      total_size += 1 +
+      total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->template_file_name());
     }
 
-    // optional string portals_file_name = 15;
+  }
+  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    // optional string portals_file_name = 17;
     if (has_portals_file_name()) {
-      total_size += 1 +
+      total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->portals_file_name());
     }
 
-  }
-  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
     // optional .swgemurpcserver.rpc.BuildingItemDetails building_details = 20;
     if (has_building_details()) {
       total_size += 2 +
@@ -1187,7 +1258,7 @@ int SWGEmuStructureItemDetails::ByteSize() const {
     }
 
   }
-  // repeated string buildable_zones = 16;
+  // repeated string buildable_zones = 18;
   total_size += 2 * this->buildable_zones_size();
   for (int i = 0; i < this->buildable_zones_size(); i++) {
     total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -1236,17 +1307,23 @@ void SWGEmuStructureItemDetails::MergeFrom(const SWGEmuStructureItemDetails& fro
     if (from.has_owner_display_name()) {
       set_owner_display_name(from.owner_display_name());
     }
+    if (from.has_owner_object_id()) {
+      set_owner_object_id(from.owner_object_id());
+    }
+    if (from.has_owner_account_id()) {
+      set_owner_account_id(from.owner_account_id());
+    }
     if (from.has_world_x()) {
       set_world_x(from.world_x());
     }
+  }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     if (from.has_world_y()) {
       set_world_y(from.world_y());
     }
     if (from.has_world_z()) {
       set_world_z(from.world_z());
     }
-  }
-  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     if (from.has_zone()) {
       set_zone(from.zone());
     }
@@ -1265,11 +1342,11 @@ void SWGEmuStructureItemDetails::MergeFrom(const SWGEmuStructureItemDetails& fro
     if (from.has_template_file_name()) {
       set_template_file_name(from.template_file_name());
     }
+  }
+  if (from._has_bits_[16 / 32] & (0xffu << (16 % 32))) {
     if (from.has_portals_file_name()) {
       set_portals_file_name(from.portals_file_name());
     }
-  }
-  if (from._has_bits_[16 / 32] & (0xffu << (16 % 32))) {
     if (from.has_building_details()) {
       mutable_building_details()->::swgemurpcserver::rpc::BuildingItemDetails::MergeFrom(from.building_details());
     }
@@ -1293,7 +1370,7 @@ void SWGEmuStructureItemDetails::CopyFrom(const SWGEmuStructureItemDetails& from
 }
 
 bool SWGEmuStructureItemDetails::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000001f) != 0x0000001f) return false;
+  if ((_has_bits_[0] & 0x0000003f) != 0x0000003f) return false;
 
   if (has_building_details()) {
     if (!this->building_details().IsInitialized()) return false;
@@ -1311,6 +1388,8 @@ void SWGEmuStructureItemDetails::Swap(SWGEmuStructureItemDetails* other) {
     std::swap(object_name_, other->object_name_);
     std::swap(display_name_, other->display_name_);
     std::swap(owner_display_name_, other->owner_display_name_);
+    std::swap(owner_object_id_, other->owner_object_id_);
+    std::swap(owner_account_id_, other->owner_account_id_);
     std::swap(world_x_, other->world_x_);
     std::swap(world_y_, other->world_y_);
     std::swap(world_z_, other->world_z_);

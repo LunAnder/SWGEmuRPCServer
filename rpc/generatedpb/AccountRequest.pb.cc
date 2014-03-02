@@ -97,7 +97,7 @@ void protobuf_AssignDesc_AccountRequest_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuAccount, user_name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuAccount, active_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuAccount, created_time_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuAccount, character_count_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuAccount, admin_level_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SWGEmuAccount, characters_),
   };
   SWGEmuAccount_reflection_ =
@@ -183,17 +183,17 @@ void protobuf_AddDesc_AccountRequest_2eproto() {
     "sur_name\030\010 \002(\t\022\023\n\013galaxy_name\030\t \002(\t\022\025\n\006b"
     "anned\030\n \001(\010:\005false\022\026\n\016ban_expiration\030\013 \001"
     "(\007\022\022\n\nban_reason\030\014 \001(\t\022\021\n\tinventory\030\r \001("
-    "\t\"\271\001\n\rSWGEmuAccount\022\022\n\naccount_id\030\001 \002(\007\022"
+    "\t\"\262\001\n\rSWGEmuAccount\022\022\n\naccount_id\030\001 \002(\007\022"
     "\021\n\tuser_name\030\002 \002(\t\022\016\n\006active\030\003 \002(\010\022\024\n\014cr"
-    "eated_time\030\004 \002(\007\022\032\n\017character_count\030\005 \001("
-    "\007:\0010\022\?\n\ncharacters\030\006 \003(\0132+.swgemurpcserv"
-    "er.rpc.SWGEmuAccountCharacter\"b\n\022GetAcco"
-    "untResponse\0224\n\010accounts\030\001 \003(\0132\".swgemurp"
-    "cserver.rpc.SWGEmuAccount\022\026\n\016valid_passw"
-    "ord\030\002 \001(\0102u\n\024SWGEmuAccountService\022]\n\nGet"
-    "Account\022&.swgemurpcserver.rpc.GetAccount"
-    "Request\032\'.swgemurpcserver.rpc.GetAccount"
-    "ResponseB\003\200\001\001", 933);
+    "eated_time\030\004 \002(\007\022\023\n\013admin_level\030\005 \001(\007\022\?\n"
+    "\ncharacters\030\n \003(\0132+.swgemurpcserver.rpc."
+    "SWGEmuAccountCharacter\"b\n\022GetAccountResp"
+    "onse\0224\n\010accounts\030\001 \003(\0132\".swgemurpcserver"
+    ".rpc.SWGEmuAccount\022\026\n\016valid_password\030\002 \001"
+    "(\0102u\n\024SWGEmuAccountService\022]\n\nGetAccount"
+    "\022&.swgemurpcserver.rpc.GetAccountRequest"
+    "\032\'.swgemurpcserver.rpc.GetAccountRespons"
+    "eB\003\200\001\001", 926);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "AccountRequest.proto", &protobuf_RegisterTypes);
   GetAccountRequest::default_instance_ = new GetAccountRequest();
@@ -1373,7 +1373,7 @@ const int SWGEmuAccount::kAccountIdFieldNumber;
 const int SWGEmuAccount::kUserNameFieldNumber;
 const int SWGEmuAccount::kActiveFieldNumber;
 const int SWGEmuAccount::kCreatedTimeFieldNumber;
-const int SWGEmuAccount::kCharacterCountFieldNumber;
+const int SWGEmuAccount::kAdminLevelFieldNumber;
 const int SWGEmuAccount::kCharactersFieldNumber;
 #endif  // !_MSC_VER
 
@@ -1397,7 +1397,7 @@ void SWGEmuAccount::SharedCtor() {
   user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   active_ = false;
   created_time_ = 0u;
-  character_count_ = 0u;
+  admin_level_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1444,7 +1444,7 @@ void SWGEmuAccount::Clear() {
     }
     active_ = false;
     created_time_ = 0u;
-    character_count_ = 0u;
+    admin_level_ = 0u;
   }
   characters_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -1517,28 +1517,28 @@ bool SWGEmuAccount::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(45)) goto parse_character_count;
+        if (input->ExpectTag(45)) goto parse_admin_level;
         break;
       }
 
-      // optional fixed32 character_count = 5 [default = 0];
+      // optional fixed32 admin_level = 5;
       case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
-         parse_character_count:
+         parse_admin_level:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
-                 input, &character_count_)));
-          set_has_character_count();
+                 input, &admin_level_)));
+          set_has_admin_level();
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(50)) goto parse_characters;
+        if (input->ExpectTag(82)) goto parse_characters;
         break;
       }
 
-      // repeated .swgemurpcserver.rpc.SWGEmuAccountCharacter characters = 6;
-      case 6: {
+      // repeated .swgemurpcserver.rpc.SWGEmuAccountCharacter characters = 10;
+      case 10: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
          parse_characters:
@@ -1547,7 +1547,7 @@ bool SWGEmuAccount::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(50)) goto parse_characters;
+        if (input->ExpectTag(82)) goto parse_characters;
         if (input->ExpectAtEnd()) return true;
         break;
       }
@@ -1594,15 +1594,15 @@ void SWGEmuAccount::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFixed32(4, this->created_time(), output);
   }
 
-  // optional fixed32 character_count = 5 [default = 0];
-  if (has_character_count()) {
-    ::google::protobuf::internal::WireFormatLite::WriteFixed32(5, this->character_count(), output);
+  // optional fixed32 admin_level = 5;
+  if (has_admin_level()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFixed32(5, this->admin_level(), output);
   }
 
-  // repeated .swgemurpcserver.rpc.SWGEmuAccountCharacter characters = 6;
+  // repeated .swgemurpcserver.rpc.SWGEmuAccountCharacter characters = 10;
   for (int i = 0; i < this->characters_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      6, this->characters(i), output);
+      10, this->characters(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -1638,16 +1638,16 @@ void SWGEmuAccount::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFixed32ToArray(4, this->created_time(), target);
   }
 
-  // optional fixed32 character_count = 5 [default = 0];
-  if (has_character_count()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFixed32ToArray(5, this->character_count(), target);
+  // optional fixed32 admin_level = 5;
+  if (has_admin_level()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFixed32ToArray(5, this->admin_level(), target);
   }
 
-  // repeated .swgemurpcserver.rpc.SWGEmuAccountCharacter characters = 6;
+  // repeated .swgemurpcserver.rpc.SWGEmuAccountCharacter characters = 10;
   for (int i = 0; i < this->characters_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        6, this->characters(i), target);
+        10, this->characters(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -1683,13 +1683,13 @@ int SWGEmuAccount::ByteSize() const {
       total_size += 1 + 4;
     }
 
-    // optional fixed32 character_count = 5 [default = 0];
-    if (has_character_count()) {
+    // optional fixed32 admin_level = 5;
+    if (has_admin_level()) {
       total_size += 1 + 4;
     }
 
   }
-  // repeated .swgemurpcserver.rpc.SWGEmuAccountCharacter characters = 6;
+  // repeated .swgemurpcserver.rpc.SWGEmuAccountCharacter characters = 10;
   total_size += 1 * this->characters_size();
   for (int i = 0; i < this->characters_size(); i++) {
     total_size +=
@@ -1736,8 +1736,8 @@ void SWGEmuAccount::MergeFrom(const SWGEmuAccount& from) {
     if (from.has_created_time()) {
       set_created_time(from.created_time());
     }
-    if (from.has_character_count()) {
-      set_character_count(from.character_count());
+    if (from.has_admin_level()) {
+      set_admin_level(from.admin_level());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -1770,7 +1770,7 @@ void SWGEmuAccount::Swap(SWGEmuAccount* other) {
     std::swap(user_name_, other->user_name_);
     std::swap(active_, other->active_);
     std::swap(created_time_, other->created_time_);
-    std::swap(character_count_, other->character_count_);
+    std::swap(admin_level_, other->admin_level_);
     characters_.Swap(&other->characters_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);

@@ -155,31 +155,45 @@ class SWGEmuStructureItemDetails : public ::google::protobuf::Message {
   inline ::std::string* release_owner_display_name();
   inline void set_allocated_owner_display_name(::std::string* owner_display_name);
 
-  // optional float world_x = 6;
+  // required fixed64 owner_object_id = 6;
+  inline bool has_owner_object_id() const;
+  inline void clear_owner_object_id();
+  static const int kOwnerObjectIdFieldNumber = 6;
+  inline ::google::protobuf::uint64 owner_object_id() const;
+  inline void set_owner_object_id(::google::protobuf::uint64 value);
+
+  // optional fixed32 owner_account_id = 7;
+  inline bool has_owner_account_id() const;
+  inline void clear_owner_account_id();
+  static const int kOwnerAccountIdFieldNumber = 7;
+  inline ::google::protobuf::uint32 owner_account_id() const;
+  inline void set_owner_account_id(::google::protobuf::uint32 value);
+
+  // optional float world_x = 8;
   inline bool has_world_x() const;
   inline void clear_world_x();
-  static const int kWorldXFieldNumber = 6;
+  static const int kWorldXFieldNumber = 8;
   inline float world_x() const;
   inline void set_world_x(float value);
 
-  // optional float world_y = 7;
+  // optional float world_y = 9;
   inline bool has_world_y() const;
   inline void clear_world_y();
-  static const int kWorldYFieldNumber = 7;
+  static const int kWorldYFieldNumber = 9;
   inline float world_y() const;
   inline void set_world_y(float value);
 
-  // optional float world_z = 8;
+  // optional float world_z = 10;
   inline bool has_world_z() const;
   inline void clear_world_z();
-  static const int kWorldZFieldNumber = 8;
+  static const int kWorldZFieldNumber = 10;
   inline float world_z() const;
   inline void set_world_z(float value);
 
-  // optional string zone = 9;
+  // optional string zone = 11;
   inline bool has_zone() const;
   inline void clear_zone();
-  static const int kZoneFieldNumber = 9;
+  static const int kZoneFieldNumber = 11;
   inline const ::std::string& zone() const;
   inline void set_zone(const ::std::string& value);
   inline void set_zone(const char* value);
@@ -188,38 +202,38 @@ class SWGEmuStructureItemDetails : public ::google::protobuf::Message {
   inline ::std::string* release_zone();
   inline void set_allocated_zone(::std::string* zone);
 
-  // optional int32 power = 10;
+  // optional int32 power = 12;
   inline bool has_power() const;
   inline void clear_power();
-  static const int kPowerFieldNumber = 10;
+  static const int kPowerFieldNumber = 12;
   inline ::google::protobuf::int32 power() const;
   inline void set_power(::google::protobuf::int32 value);
 
-  // optional int32 maintenance = 11;
+  // optional int32 maintenance = 13;
   inline bool has_maintenance() const;
   inline void clear_maintenance();
-  static const int kMaintenanceFieldNumber = 11;
+  static const int kMaintenanceFieldNumber = 13;
   inline ::google::protobuf::int32 maintenance() const;
   inline void set_maintenance(::google::protobuf::int32 value);
 
-  // optional int32 decay_percent = 12;
+  // optional int32 decay_percent = 14;
   inline bool has_decay_percent() const;
   inline void clear_decay_percent();
-  static const int kDecayPercentFieldNumber = 12;
+  static const int kDecayPercentFieldNumber = 14;
   inline ::google::protobuf::int32 decay_percent() const;
   inline void set_decay_percent(::google::protobuf::int32 value);
 
-  // optional int32 lot_size = 13;
+  // optional int32 lot_size = 15;
   inline bool has_lot_size() const;
   inline void clear_lot_size();
-  static const int kLotSizeFieldNumber = 13;
+  static const int kLotSizeFieldNumber = 15;
   inline ::google::protobuf::int32 lot_size() const;
   inline void set_lot_size(::google::protobuf::int32 value);
 
-  // optional string template_file_name = 14;
+  // optional string template_file_name = 16;
   inline bool has_template_file_name() const;
   inline void clear_template_file_name();
-  static const int kTemplateFileNameFieldNumber = 14;
+  static const int kTemplateFileNameFieldNumber = 16;
   inline const ::std::string& template_file_name() const;
   inline void set_template_file_name(const ::std::string& value);
   inline void set_template_file_name(const char* value);
@@ -228,10 +242,10 @@ class SWGEmuStructureItemDetails : public ::google::protobuf::Message {
   inline ::std::string* release_template_file_name();
   inline void set_allocated_template_file_name(::std::string* template_file_name);
 
-  // optional string portals_file_name = 15;
+  // optional string portals_file_name = 17;
   inline bool has_portals_file_name() const;
   inline void clear_portals_file_name();
-  static const int kPortalsFileNameFieldNumber = 15;
+  static const int kPortalsFileNameFieldNumber = 17;
   inline const ::std::string& portals_file_name() const;
   inline void set_portals_file_name(const ::std::string& value);
   inline void set_portals_file_name(const char* value);
@@ -240,10 +254,10 @@ class SWGEmuStructureItemDetails : public ::google::protobuf::Message {
   inline ::std::string* release_portals_file_name();
   inline void set_allocated_portals_file_name(::std::string* portals_file_name);
 
-  // repeated string buildable_zones = 16;
+  // repeated string buildable_zones = 18;
   inline int buildable_zones_size() const;
   inline void clear_buildable_zones();
-  static const int kBuildableZonesFieldNumber = 16;
+  static const int kBuildableZonesFieldNumber = 18;
   inline const ::std::string& buildable_zones(int index) const;
   inline ::std::string* mutable_buildable_zones(int index);
   inline void set_buildable_zones(int index, const ::std::string& value);
@@ -286,6 +300,10 @@ class SWGEmuStructureItemDetails : public ::google::protobuf::Message {
   inline void clear_has_display_name();
   inline void set_has_owner_display_name();
   inline void clear_has_owner_display_name();
+  inline void set_has_owner_object_id();
+  inline void clear_has_owner_object_id();
+  inline void set_has_owner_account_id();
+  inline void clear_has_owner_account_id();
   inline void set_has_world_x();
   inline void clear_has_world_x();
   inline void set_has_world_y();
@@ -318,22 +336,24 @@ class SWGEmuStructureItemDetails : public ::google::protobuf::Message {
   ::std::string* object_name_;
   ::std::string* display_name_;
   ::std::string* owner_display_name_;
+  ::google::protobuf::uint64 owner_object_id_;
+  ::google::protobuf::uint32 owner_account_id_;
   float world_x_;
   float world_y_;
-  ::std::string* zone_;
   float world_z_;
+  ::std::string* zone_;
   ::google::protobuf::int32 power_;
   ::google::protobuf::int32 maintenance_;
   ::google::protobuf::int32 decay_percent_;
+  ::google::protobuf::int32 lot_size_;
   ::std::string* template_file_name_;
   ::std::string* portals_file_name_;
   ::google::protobuf::RepeatedPtrField< ::std::string> buildable_zones_;
   ::swgemurpcserver::rpc::BuildingItemDetails* building_details_;
   ::swgemurpcserver::rpc::InstallationItemDetails* installation_details_;
-  ::google::protobuf::int32 lot_size_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(18 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(20 + 31) / 32];
 
   friend void  protobuf_AddDesc_StructureDetails_2eproto();
   friend void protobuf_AssignDesc_StructureDetails_2eproto();
@@ -1290,15 +1310,59 @@ inline void SWGEmuStructureItemDetails::set_allocated_owner_display_name(::std::
   }
 }
 
-// optional float world_x = 6;
-inline bool SWGEmuStructureItemDetails::has_world_x() const {
+// required fixed64 owner_object_id = 6;
+inline bool SWGEmuStructureItemDetails::has_owner_object_id() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }
-inline void SWGEmuStructureItemDetails::set_has_world_x() {
+inline void SWGEmuStructureItemDetails::set_has_owner_object_id() {
   _has_bits_[0] |= 0x00000020u;
 }
-inline void SWGEmuStructureItemDetails::clear_has_world_x() {
+inline void SWGEmuStructureItemDetails::clear_has_owner_object_id() {
   _has_bits_[0] &= ~0x00000020u;
+}
+inline void SWGEmuStructureItemDetails::clear_owner_object_id() {
+  owner_object_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_owner_object_id();
+}
+inline ::google::protobuf::uint64 SWGEmuStructureItemDetails::owner_object_id() const {
+  return owner_object_id_;
+}
+inline void SWGEmuStructureItemDetails::set_owner_object_id(::google::protobuf::uint64 value) {
+  set_has_owner_object_id();
+  owner_object_id_ = value;
+}
+
+// optional fixed32 owner_account_id = 7;
+inline bool SWGEmuStructureItemDetails::has_owner_account_id() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void SWGEmuStructureItemDetails::set_has_owner_account_id() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void SWGEmuStructureItemDetails::clear_has_owner_account_id() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void SWGEmuStructureItemDetails::clear_owner_account_id() {
+  owner_account_id_ = 0u;
+  clear_has_owner_account_id();
+}
+inline ::google::protobuf::uint32 SWGEmuStructureItemDetails::owner_account_id() const {
+  return owner_account_id_;
+}
+inline void SWGEmuStructureItemDetails::set_owner_account_id(::google::protobuf::uint32 value) {
+  set_has_owner_account_id();
+  owner_account_id_ = value;
+}
+
+// optional float world_x = 8;
+inline bool SWGEmuStructureItemDetails::has_world_x() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void SWGEmuStructureItemDetails::set_has_world_x() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void SWGEmuStructureItemDetails::clear_has_world_x() {
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline void SWGEmuStructureItemDetails::clear_world_x() {
   world_x_ = 0;
@@ -1312,15 +1376,15 @@ inline void SWGEmuStructureItemDetails::set_world_x(float value) {
   world_x_ = value;
 }
 
-// optional float world_y = 7;
+// optional float world_y = 9;
 inline bool SWGEmuStructureItemDetails::has_world_y() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
+  return (_has_bits_[0] & 0x00000100u) != 0;
 }
 inline void SWGEmuStructureItemDetails::set_has_world_y() {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000100u;
 }
 inline void SWGEmuStructureItemDetails::clear_has_world_y() {
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 inline void SWGEmuStructureItemDetails::clear_world_y() {
   world_y_ = 0;
@@ -1334,15 +1398,15 @@ inline void SWGEmuStructureItemDetails::set_world_y(float value) {
   world_y_ = value;
 }
 
-// optional float world_z = 8;
+// optional float world_z = 10;
 inline bool SWGEmuStructureItemDetails::has_world_z() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+  return (_has_bits_[0] & 0x00000200u) != 0;
 }
 inline void SWGEmuStructureItemDetails::set_has_world_z() {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000200u;
 }
 inline void SWGEmuStructureItemDetails::clear_has_world_z() {
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000200u;
 }
 inline void SWGEmuStructureItemDetails::clear_world_z() {
   world_z_ = 0;
@@ -1356,15 +1420,15 @@ inline void SWGEmuStructureItemDetails::set_world_z(float value) {
   world_z_ = value;
 }
 
-// optional string zone = 9;
+// optional string zone = 11;
 inline bool SWGEmuStructureItemDetails::has_zone() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
+  return (_has_bits_[0] & 0x00000400u) != 0;
 }
 inline void SWGEmuStructureItemDetails::set_has_zone() {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000400u;
 }
 inline void SWGEmuStructureItemDetails::clear_has_zone() {
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000400u;
 }
 inline void SWGEmuStructureItemDetails::clear_zone() {
   if (zone_ != &::google::protobuf::internal::kEmptyString) {
@@ -1426,15 +1490,15 @@ inline void SWGEmuStructureItemDetails::set_allocated_zone(::std::string* zone) 
   }
 }
 
-// optional int32 power = 10;
+// optional int32 power = 12;
 inline bool SWGEmuStructureItemDetails::has_power() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
+  return (_has_bits_[0] & 0x00000800u) != 0;
 }
 inline void SWGEmuStructureItemDetails::set_has_power() {
-  _has_bits_[0] |= 0x00000200u;
+  _has_bits_[0] |= 0x00000800u;
 }
 inline void SWGEmuStructureItemDetails::clear_has_power() {
-  _has_bits_[0] &= ~0x00000200u;
+  _has_bits_[0] &= ~0x00000800u;
 }
 inline void SWGEmuStructureItemDetails::clear_power() {
   power_ = 0;
@@ -1448,15 +1512,15 @@ inline void SWGEmuStructureItemDetails::set_power(::google::protobuf::int32 valu
   power_ = value;
 }
 
-// optional int32 maintenance = 11;
+// optional int32 maintenance = 13;
 inline bool SWGEmuStructureItemDetails::has_maintenance() const {
-  return (_has_bits_[0] & 0x00000400u) != 0;
+  return (_has_bits_[0] & 0x00001000u) != 0;
 }
 inline void SWGEmuStructureItemDetails::set_has_maintenance() {
-  _has_bits_[0] |= 0x00000400u;
+  _has_bits_[0] |= 0x00001000u;
 }
 inline void SWGEmuStructureItemDetails::clear_has_maintenance() {
-  _has_bits_[0] &= ~0x00000400u;
+  _has_bits_[0] &= ~0x00001000u;
 }
 inline void SWGEmuStructureItemDetails::clear_maintenance() {
   maintenance_ = 0;
@@ -1470,15 +1534,15 @@ inline void SWGEmuStructureItemDetails::set_maintenance(::google::protobuf::int3
   maintenance_ = value;
 }
 
-// optional int32 decay_percent = 12;
+// optional int32 decay_percent = 14;
 inline bool SWGEmuStructureItemDetails::has_decay_percent() const {
-  return (_has_bits_[0] & 0x00000800u) != 0;
+  return (_has_bits_[0] & 0x00002000u) != 0;
 }
 inline void SWGEmuStructureItemDetails::set_has_decay_percent() {
-  _has_bits_[0] |= 0x00000800u;
+  _has_bits_[0] |= 0x00002000u;
 }
 inline void SWGEmuStructureItemDetails::clear_has_decay_percent() {
-  _has_bits_[0] &= ~0x00000800u;
+  _has_bits_[0] &= ~0x00002000u;
 }
 inline void SWGEmuStructureItemDetails::clear_decay_percent() {
   decay_percent_ = 0;
@@ -1492,15 +1556,15 @@ inline void SWGEmuStructureItemDetails::set_decay_percent(::google::protobuf::in
   decay_percent_ = value;
 }
 
-// optional int32 lot_size = 13;
+// optional int32 lot_size = 15;
 inline bool SWGEmuStructureItemDetails::has_lot_size() const {
-  return (_has_bits_[0] & 0x00001000u) != 0;
+  return (_has_bits_[0] & 0x00004000u) != 0;
 }
 inline void SWGEmuStructureItemDetails::set_has_lot_size() {
-  _has_bits_[0] |= 0x00001000u;
+  _has_bits_[0] |= 0x00004000u;
 }
 inline void SWGEmuStructureItemDetails::clear_has_lot_size() {
-  _has_bits_[0] &= ~0x00001000u;
+  _has_bits_[0] &= ~0x00004000u;
 }
 inline void SWGEmuStructureItemDetails::clear_lot_size() {
   lot_size_ = 0;
@@ -1514,15 +1578,15 @@ inline void SWGEmuStructureItemDetails::set_lot_size(::google::protobuf::int32 v
   lot_size_ = value;
 }
 
-// optional string template_file_name = 14;
+// optional string template_file_name = 16;
 inline bool SWGEmuStructureItemDetails::has_template_file_name() const {
-  return (_has_bits_[0] & 0x00002000u) != 0;
+  return (_has_bits_[0] & 0x00008000u) != 0;
 }
 inline void SWGEmuStructureItemDetails::set_has_template_file_name() {
-  _has_bits_[0] |= 0x00002000u;
+  _has_bits_[0] |= 0x00008000u;
 }
 inline void SWGEmuStructureItemDetails::clear_has_template_file_name() {
-  _has_bits_[0] &= ~0x00002000u;
+  _has_bits_[0] &= ~0x00008000u;
 }
 inline void SWGEmuStructureItemDetails::clear_template_file_name() {
   if (template_file_name_ != &::google::protobuf::internal::kEmptyString) {
@@ -1584,15 +1648,15 @@ inline void SWGEmuStructureItemDetails::set_allocated_template_file_name(::std::
   }
 }
 
-// optional string portals_file_name = 15;
+// optional string portals_file_name = 17;
 inline bool SWGEmuStructureItemDetails::has_portals_file_name() const {
-  return (_has_bits_[0] & 0x00004000u) != 0;
+  return (_has_bits_[0] & 0x00010000u) != 0;
 }
 inline void SWGEmuStructureItemDetails::set_has_portals_file_name() {
-  _has_bits_[0] |= 0x00004000u;
+  _has_bits_[0] |= 0x00010000u;
 }
 inline void SWGEmuStructureItemDetails::clear_has_portals_file_name() {
-  _has_bits_[0] &= ~0x00004000u;
+  _has_bits_[0] &= ~0x00010000u;
 }
 inline void SWGEmuStructureItemDetails::clear_portals_file_name() {
   if (portals_file_name_ != &::google::protobuf::internal::kEmptyString) {
@@ -1654,7 +1718,7 @@ inline void SWGEmuStructureItemDetails::set_allocated_portals_file_name(::std::s
   }
 }
 
-// repeated string buildable_zones = 16;
+// repeated string buildable_zones = 18;
 inline int SWGEmuStructureItemDetails::buildable_zones_size() const {
   return buildable_zones_.size();
 }
@@ -1700,13 +1764,13 @@ SWGEmuStructureItemDetails::mutable_buildable_zones() {
 
 // optional .swgemurpcserver.rpc.BuildingItemDetails building_details = 20;
 inline bool SWGEmuStructureItemDetails::has_building_details() const {
-  return (_has_bits_[0] & 0x00010000u) != 0;
+  return (_has_bits_[0] & 0x00040000u) != 0;
 }
 inline void SWGEmuStructureItemDetails::set_has_building_details() {
-  _has_bits_[0] |= 0x00010000u;
+  _has_bits_[0] |= 0x00040000u;
 }
 inline void SWGEmuStructureItemDetails::clear_has_building_details() {
-  _has_bits_[0] &= ~0x00010000u;
+  _has_bits_[0] &= ~0x00040000u;
 }
 inline void SWGEmuStructureItemDetails::clear_building_details() {
   if (building_details_ != NULL) building_details_->::swgemurpcserver::rpc::BuildingItemDetails::Clear();
@@ -1738,13 +1802,13 @@ inline void SWGEmuStructureItemDetails::set_allocated_building_details(::swgemur
 
 // optional .swgemurpcserver.rpc.InstallationItemDetails installation_details = 21;
 inline bool SWGEmuStructureItemDetails::has_installation_details() const {
-  return (_has_bits_[0] & 0x00020000u) != 0;
+  return (_has_bits_[0] & 0x00080000u) != 0;
 }
 inline void SWGEmuStructureItemDetails::set_has_installation_details() {
-  _has_bits_[0] |= 0x00020000u;
+  _has_bits_[0] |= 0x00080000u;
 }
 inline void SWGEmuStructureItemDetails::clear_has_installation_details() {
-  _has_bits_[0] &= ~0x00020000u;
+  _has_bits_[0] &= ~0x00080000u;
 }
 inline void SWGEmuStructureItemDetails::clear_installation_details() {
   if (installation_details_ != NULL) installation_details_->::swgemurpcserver::rpc::InstallationItemDetails::Clear();

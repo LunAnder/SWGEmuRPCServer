@@ -64,7 +64,7 @@ void RPCServerImpl::start(server::conf::ConfigManager* config, server::zone::Zon
 
 		std::cout << " endpointAddr " << configManager->getRPCEndpointAddress().toCharArray() << std::endl;
 
-		std::string ip(configManager->getRPCEndpointAddress().toCharArray(),true);
+		std::string ip(configManager->getRPCEndpointAddress().toCharArray());
 
 		logger->info((std::string("RPC Server Address is: ") + ip).c_str(),true);
 

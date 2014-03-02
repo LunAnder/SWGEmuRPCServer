@@ -522,17 +522,17 @@ class SWGEmuAccount : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 created_time() const;
   inline void set_created_time(::google::protobuf::uint32 value);
 
-  // optional fixed32 character_count = 5 [default = 0];
-  inline bool has_character_count() const;
-  inline void clear_character_count();
-  static const int kCharacterCountFieldNumber = 5;
-  inline ::google::protobuf::uint32 character_count() const;
-  inline void set_character_count(::google::protobuf::uint32 value);
+  // optional fixed32 admin_level = 5;
+  inline bool has_admin_level() const;
+  inline void clear_admin_level();
+  static const int kAdminLevelFieldNumber = 5;
+  inline ::google::protobuf::uint32 admin_level() const;
+  inline void set_admin_level(::google::protobuf::uint32 value);
 
-  // repeated .swgemurpcserver.rpc.SWGEmuAccountCharacter characters = 6;
+  // repeated .swgemurpcserver.rpc.SWGEmuAccountCharacter characters = 10;
   inline int characters_size() const;
   inline void clear_characters();
-  static const int kCharactersFieldNumber = 6;
+  static const int kCharactersFieldNumber = 10;
   inline const ::swgemurpcserver::rpc::SWGEmuAccountCharacter& characters(int index) const;
   inline ::swgemurpcserver::rpc::SWGEmuAccountCharacter* mutable_characters(int index);
   inline ::swgemurpcserver::rpc::SWGEmuAccountCharacter* add_characters();
@@ -551,8 +551,8 @@ class SWGEmuAccount : public ::google::protobuf::Message {
   inline void clear_has_active();
   inline void set_has_created_time();
   inline void clear_has_created_time();
-  inline void set_has_character_count();
-  inline void clear_has_character_count();
+  inline void set_has_admin_level();
+  inline void clear_has_admin_level();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -560,7 +560,7 @@ class SWGEmuAccount : public ::google::protobuf::Message {
   ::google::protobuf::uint32 account_id_;
   bool active_;
   ::google::protobuf::uint32 created_time_;
-  ::google::protobuf::uint32 character_count_;
+  ::google::protobuf::uint32 admin_level_;
   ::google::protobuf::RepeatedPtrField< ::swgemurpcserver::rpc::SWGEmuAccountCharacter > characters_;
 
   mutable int _cached_size_;
@@ -1589,29 +1589,29 @@ inline void SWGEmuAccount::set_created_time(::google::protobuf::uint32 value) {
   created_time_ = value;
 }
 
-// optional fixed32 character_count = 5 [default = 0];
-inline bool SWGEmuAccount::has_character_count() const {
+// optional fixed32 admin_level = 5;
+inline bool SWGEmuAccount::has_admin_level() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
-inline void SWGEmuAccount::set_has_character_count() {
+inline void SWGEmuAccount::set_has_admin_level() {
   _has_bits_[0] |= 0x00000010u;
 }
-inline void SWGEmuAccount::clear_has_character_count() {
+inline void SWGEmuAccount::clear_has_admin_level() {
   _has_bits_[0] &= ~0x00000010u;
 }
-inline void SWGEmuAccount::clear_character_count() {
-  character_count_ = 0u;
-  clear_has_character_count();
+inline void SWGEmuAccount::clear_admin_level() {
+  admin_level_ = 0u;
+  clear_has_admin_level();
 }
-inline ::google::protobuf::uint32 SWGEmuAccount::character_count() const {
-  return character_count_;
+inline ::google::protobuf::uint32 SWGEmuAccount::admin_level() const {
+  return admin_level_;
 }
-inline void SWGEmuAccount::set_character_count(::google::protobuf::uint32 value) {
-  set_has_character_count();
-  character_count_ = value;
+inline void SWGEmuAccount::set_admin_level(::google::protobuf::uint32 value) {
+  set_has_admin_level();
+  admin_level_ = value;
 }
 
-// repeated .swgemurpcserver.rpc.SWGEmuAccountCharacter characters = 6;
+// repeated .swgemurpcserver.rpc.SWGEmuAccountCharacter characters = 10;
 inline int SWGEmuAccount::characters_size() const {
   return characters_.size();
 }

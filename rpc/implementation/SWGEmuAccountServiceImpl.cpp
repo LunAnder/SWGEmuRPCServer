@@ -111,10 +111,9 @@ void SWGEmuAccountServiceImpl::GetAccount(
 				resAccount->set_user_name(foundAccount->getUsername().toCharArray());
 				resAccount->set_active(foundAccount->isActive());
 				resAccount->set_created_time(foundAccount->getTimeCreated());
+				resAccount->set_admin_level(foundAccount->getAdminLevel());
 
 				CharacterList* characters = foundAccount->getCharacterList();
-
-				resAccount->set_character_count(characters->size());
 
 				if(characters->size() > 0) {
 					for(int i = 0; i < characters->size(); i++) {
