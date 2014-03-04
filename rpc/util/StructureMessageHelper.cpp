@@ -63,7 +63,7 @@ void StructureMessageHelper::AddStructureDetailsToMessage(server::zone::objects:
 	structDetails->set_decay_percent(structreObj->getDecayPercentage());
 	structDetails->set_lot_size(structreObj->getLotSize());
 
-	PlayerObject* onwerPlayer = dynamic_cast<PlayerObject*>(structreObj->getOwnerCreatureObject());
+	Reference<PlayerObject*> onwerPlayer = structreObj->getOwnerCreatureObject()->getPlayerObject();
 
 	if(onwerPlayer != NULL) {
 		structDetails->set_owner_account_id(onwerPlayer->getAccountID());
