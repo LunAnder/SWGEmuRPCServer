@@ -434,7 +434,7 @@ SWIGINTERN void SWIG_CSharpException(int code, const char *msg) {
 #include <stdexcept>
 
 
-#include "RCFProto.hpp"
+#include "../RCFProto.hpp"
 
 SWIGINTERN std::vector< RCF::TransportProtocol > *new_std_vector_Sl_RCF_TransportProtocol_Sg___SWIG_2(int capacity){
         std::vector< RCF::TransportProtocol >* pv = 0;

@@ -51,8 +51,14 @@ RPCServerImpl.o: SWGEmuAccountServiceImpl.o SWGEmuCharacterDetailsServiceImpl.o 
 RPCServer.o: RPCServerImpl.o
 	g++ -fPIC -c -ggdb ../rpc/RPCServer.cpp -DRCF_BUILD_DLL -DSWGEMURPC_BUILD_DLL -I/usr/local/include -I.. -I../rcf -I../rcf/RCF/include -I../../MMOCoreORB/src -I../../MMOCoreORB/src/autogen -I../../MMOCoreORB/utils/gmock-1.6.0/include -I../../MMOCoreORB/utils/gtest-1.6.0/include -I../../MMOEngine/include -I/usr/include/lua5.1 -I/usr/include/mysql -I/usr/local/BerkeleyDB.5.0/include -I/usr/include/db5.0 -Wno-multichar
 
+RCFProto_NET_impl.o:
+	g++ -fPIC -c ../rcf/swig/RCFProto_NET_impl.cpp ../rcf/RCFProto_NET_impl.rc -DRCF_BUILD_DLL -DRCF_USE_ZLIB -DRCF_USE_OPENSSL -I/home/swgemu/boost_1_55_0 -I../../src -I../../src/RCF/include -I../rcf/swig -I../rcf/RCF/include
+
 test : RCF.o RCFProto.o AccountRequest.o CharacterDetails.o StructureDetails.o InventoryItem.o
 	g++ -oTestRPCClient ../testRPCClient.cpp RCFProto.o RCF.o AccountRequest.pb.o InventoryItem.pb.o CharacterDetails.pb.o StructureDetails.pb.o -I/usr/local/include -I.. -I../rcf -I../rcf/RCF/include -Wno-multichar -lpthread -lprotobuf -ldl
 
 libSWGEmuRPCServer.so:  RCF.o RCFProto.o AccountRequest.o InventoryItem.o SWGEmuAccountServiceImpl.o CharacterDetails.o SWGEmuCharacterDetailsServiceImpl.o StructureMessageHelper.o RPCServerImpl.o RPCServer.o
-	g++ -shared -ggdb -o libSWGEmuRPCServer.so RCFProto.o RCF.o AccountRequest.pb.o InventoryItem.pb.o CharacterDetails.pb.o SWGEmuAccountServiceImpl.o ItemMessageHelper.o StructureMessageHelper.o SWGEmuCharacterDetailsServiceImpl.o StructureDetails.pb.o SWGEmuStructureItemDetailsServiceImpl.o RPCServerImpl.o RPCServer.o -lpthread -lprotobuf -ldl 
+	g++ -shared -ggdb -o libSWGEmuRPCServer.so RCFProto.o RCF.o AccountRequest.pb.o InventoryItem.pb.o CharacterDetails.pb.o SWGEmuAccountServiceImpl.o ItemMessageHelper.o StructureMessageHelper.o SWGEmuCharacterDetailsServiceImpl.o StructureDetails.pb.o SWGEmuStructureItemDetailsServiceImpl.o RPCServerImpl.o RPCServer.o -lpthread -lprotobuf -ldl
+
+libRCFProto_NET_impl.so: RCFProto.o RCF.o RCFProto_NET_impl.o
+	g++ -shared -o libRCFProto_NET_impl.so RCFProto.o RCF.o RCFProto_NET_impl.o -lpthread -lprotobuf -ldl
