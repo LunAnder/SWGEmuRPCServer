@@ -1,4 +1,4 @@
-all: libSWGEmuRPCServer.so
+all: libSWGEmuRPCServer.a
 
 AccountRequest.pb.cc:
 	protoc ../rpc/proto/AccountRequest.proto --proto_path=../rpc/proto --cpp_out=../rpc/generatedpb
@@ -62,3 +62,6 @@ libSWGEmuRPCServer.so:  RCF.o RCFProto.o AccountRequest.o InventoryItem.o SWGEmu
 
 libRCFProto_NET_impl.so: RCFProto.o RCF.o RCFProto_NET_impl.o
 	g++ -shared -o libRCFProto_NET_impl.so RCFProto.o RCF.o RCFProto_NET_impl.o -lpthread -lprotobuf -ldl
+
+libSWGEmuRPCServer.a: RCF.o RCFProto.o AccountRequest.o InventoryItem.o SWGEmuAccountServiceImpl.o CharacterDetails.o SWGEmuCharacterDetailsServiceImpl.o StructureMessageHelper.o RPCServerImpl.o RPCServer.o
+	ar rcs libSWGEmuRPCServer.a RCFProto.o RCF.o AccountRequest.pb.o InventoryItem.pb.o CharacterDetails.pb.o SWGEmuAccountServiceImpl.o ItemMessageHelper.o StructureMessageHelper.o SWGEmuCharacterDetailsServiceImpl.o StructureDetails.pb.o SWGEmuStructureItemDetailsServiceImpl.o RPCServerImpl.o RPCServer.o

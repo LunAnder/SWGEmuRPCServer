@@ -21,12 +21,11 @@
 
 RPCServerImpl::RPCServerImpl() {
 	configManager = NULL;
-	//const char* loggerName = "RPCServerImpl";
 	logger = new engine::log::Logger(sys::lang::String("RPCServerImpl"));
 	serviceImpl = new swgemurpcserver::rpc::SWGEmuAccountServiceImpl();
 	detailsImpl = new swgemurpcserver::rpc::SWGEmuCharacterDetailsServiceImpl();
 	structDetailsImpl = new swgemurpcserver::rpc::SWGEmuStructureItemDetailsServiceImpl();
-	//threadPoolPtr = new RCF::ThreadPoolPtr(new RCF::ThreadPool(5));
+
 }
 
 RPCServerImpl::~RPCServerImpl() {
@@ -43,13 +42,9 @@ void RPCServerImpl::start(server::conf::ConfigManager* config, server::zone::Zon
 	zoneServer = zone;
 	try
 	{
-		logger->info("RCF Init start",true);
-
 		RCF::init();
 
 		const std::string logPath (configManager->getRPCLogPath().toCharArray());
-
-		logger->info((std::string("RPC log path: ") + logPath).c_str(),true);
 
 		RCF::enableLogging(RCF::LogToFile(logPath), RCF::LogLevel_4, "");
 
@@ -58,19 +53,10 @@ void RPCServerImpl::start(server::conf::ConfigManager* config, server::zone::Zon
 		detailsImpl->setZoneServer(zoneServer);
 		structDetailsImpl->setZoneServer(zoneServer);
 
-		std::string endpointType (configManager->getRPCEndpointType().toCharArray());
+		const std::string endpointType (configManager->getRPCEndpointType().toCharArray());
+		const std::string ip(configManager->getRPCEndpointAddress().toCharArray());
 
-		logger->info((std::string("RPC Server Type is: ") + endpointType).c_str(),true);
-
-		std::cout << " endpointAddr " << configManager->getRPCEndpointAddress().toCharArray() << std::endl;
-
-		std::string ip(configManager->getRPCEndpointAddress().toCharArray());
-
-		logger->info((std::string("RPC Server Address is: ") + ip).c_str(),true);
-
-		rcfServer = new RCF::RcfProtoServer(RCF::TcpEndpoint("0.0.0.0",44471));
-
-		/*if(endpointType == "tcp") {
+		if(endpointType == "tcp") {
 			rcfServer = new RCF::RcfProtoServer(RCF::TcpEndpoint(ip, configManager->getRPCEndpointPort()));
 		}
 		else if(endpointType == "udp") {
@@ -85,16 +71,15 @@ void RPCServerImpl::start(server::conf::ConfigManager* config, server::zone::Zon
 		else {
 			logger->error("No valid RPC server type in config");
 			return;
-		}*/
+		}
 
-		logger->info("binding service",true);
+
 		rcfServer->bindService(serviceImpl, std::string("SWGEmuAccountService"));
 		rcfServer->bindService(detailsImpl, std::string("SWGEmuCharacterDetailsService"));
 		rcfServer->bindService(structDetailsImpl, std::string("SWGEmuStructureItemDetailsService"));
 		rcfServer->setThreadPool(RCF::ThreadPoolPtr(new RCF::ThreadPool(5)));
 
 		rcfServer->start();
-		logger->info("server started",true);
 
 	}
 	catch(const RCF::Exception & e) {
